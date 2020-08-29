@@ -1,0 +1,81 @@
+<!-- author:Sole_idol -->
+<!-- filename: base1.html -->
+<!-- datetime:2020/8/18 11:49 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>base1继承模板</title>
+    {% endblock %}
+    <link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .father{
+            width: 1000px;
+            margin: 10px auto;
+        }
+        .nav{
+            height: 100px;
+            background-color: #a6e1ec;
+        }
+        .container{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            float: left;
+            width: 800px;
+            height: 600px;
+            background: #fcf8e3;
+            padding: 10px;
+        }
+        .sidebar{
+            float: left;
+            width: 200px;
+            height: 600px;
+            background: #66afe9;
+        }
+        .bottom{
+            height: 100px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<!-- 主盒子 -->
+<div class="father">
+    <!-- 导航栏 -->
+    <div class="nav">
+        {% block nav %}
+        {% endblock %}
+    </div>
+    <!-- 容器 -->
+    <div class="container">
+        {% block container %}
+            <!-- 内容 -->
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <!-- 侧栏 -->
+            <div class="sidebar">
+                {% block sidebar %}
+                    <h3>广告时间:</h3>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+    <!-- 底栏 -->
+    <div class="bottom">
+        {% block bottom %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
